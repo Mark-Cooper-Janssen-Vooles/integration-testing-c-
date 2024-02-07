@@ -6,10 +6,13 @@
   - [Benefits of Integration Testing](#benefits-of-integration-testing)
   - Types of Integration Testing
   - Integration Testing with .NET Core
-- 
+- Creating the System under test (SUT)
+  - 
 
 
 ---
+
+## Intro
 
 ### Unit Testing vs Integration Testing
 Unit testing:
@@ -89,3 +92,15 @@ Continous Inegration testing:
 - It is good practice to use separate test projects for unit tests and integration tests - do not mix them in the same projects
   - so they can be run independently of each other 
   - there is a different naming convention for integration tests 
+
+---
+
+## Creating the System under test (SUT)
+
+- `dotnet new webapi -n TodoApi`
+  - comes with Microsoft.AspNetCore.OpenApi and Swashbuckle.AspNetCore
+    - OpenApi provides annotations for using APIs
+    - Swagger has tools for documenting APIs 
+- `cd TodoApi`
+- `dotnet add package Microsoft.EntityFrameworkCore --version 7.0.0`
+- `dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 7.0.0`
