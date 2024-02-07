@@ -9,6 +9,13 @@
 - Creating the System under test (SUT)
   - 
 
+---
+
+Terminal commands for using VSCode: 
+- `dotnet new webapi -n TodoApi`
+- `cd TodoApi`
+- `dotnet add package Microsoft.EntityFrameworkCore --version 7.0.0`
+- `dotnet build`
 
 ---
 
@@ -99,8 +106,19 @@ Continous Inegration testing:
 
 - `dotnet new webapi -n TodoApi`
   - comes with Microsoft.AspNetCore.OpenApi and Swashbuckle.AspNetCore
-    - OpenApi provides annotations for using APIs
-    - Swagger has tools for documenting APIs 
+    - OpenApi: provides annotations for using APIs
+    - Swashbuckle: Swagger has tools for documenting APIs (can use instead of postman)
 - `cd TodoApi`
 - `dotnet add package Microsoft.EntityFrameworkCore --version 7.0.0`
 - `dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 7.0.0`
+
+- Fill out the project
+  - create Models folder to house domain models
+    - create the TodoItem.cs in there ,
+  - create Data folder
+    - add TodoContext.cs 
+    - in entityFrameworkCore this represents a 'session' and provides a way for us to access the database 
+    - it describes managing the db and the connection
+  - Seed the database
+    - in the models folder, add a class 'DbInitializer'
+    - EnsureCreated() makes sure it exists. if it doesn't then it creates it.
