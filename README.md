@@ -16,6 +16,8 @@ Terminal commands for using VSCode:
 - `cd TodoApi`
 - `dotnet add package Microsoft.EntityFrameworkCore --version 7.0.0`
 - `dotnet build`
+- `dotnet run` - it will tell you what port its on, can see it by visiting: `http://localhost:<port>/swagger/index.html`
+- 
 
 ---
 
@@ -122,3 +124,6 @@ Continous Inegration testing:
   - Seed the database
     - in the models folder, add a class 'DbInitializer'
     - EnsureCreated() makes sure it exists. if it doesn't then it creates it.
+  - update Program.cs
+    - because we're using an in-memory db; we need to keep the connection open. usually entityFrameworkCore opens and closes the connection as needed
+    - 
