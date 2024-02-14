@@ -26,7 +26,6 @@ public static class TodoItemAssertionsExtensions
         var todo1IsComplete = todo1.Subject.IsComplete;
         var todo2IsComplete = todo2.IsComplete;
         
-
         Execute.Assertion.ForCondition(todo1Name == todo2Name).FailWith("names are not the same!");
         Execute.Assertion.ForCondition(todo1IsComplete == todo2IsComplete).FailWith("isComplete is not the same!");
 

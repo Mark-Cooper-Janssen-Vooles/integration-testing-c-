@@ -8,6 +8,7 @@
   - Integration Testing with .NET Core
 - [Creating the System under test (SUT)](#creating-the-system-under-test-sut)
 - [Fluent Assertions in Testing](#fluent-assertions-in-testing)
+- [Integration testing of DB layer - API Integration testing](#integration-testing-of-database-layer-api-integration-testing)
 
 ---
 
@@ -146,4 +147,6 @@ Continous Inegration testing:
   - CollectionAssertion.cs
   - CustomFluentAssertions.cs
   - BestPracticesFluentAssertions.cs
+
+## Integration Testing of Database Layer (API Integration Testing)
 
