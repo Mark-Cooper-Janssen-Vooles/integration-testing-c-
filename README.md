@@ -145,4 +145,5 @@ Continous Inegration testing:
   - OtherAdvancedAssertions.cs
   - CollectionAssertion.cs
   - CustomFluentAssertions.cs
+  - BestPracticesFluentAssertions.cs
 
