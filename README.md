@@ -140,4 +140,9 @@ Continous Inegration testing:
   - run `dotnet test` to run it
 - `dotnet add package FluentAssertions`
 
-- work in fluentAssertionsDemo/unittest1.cs
+- work in fluentAssertionsDemo/
+  - unitTestExamples.cs
+  - OtherAdvancedAssertions.cs
+  - CollectionAssertion.cs
+  - CustomFluentAssertions.cs
+
