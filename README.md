@@ -6,8 +6,8 @@
   - [Benefits of Integration Testing](#benefits-of-integration-testing)
   - Types of Integration Testing
   - Integration Testing with .NET Core
-- Creating the System under test (SUT)
-  - 
+- [Creating the System under test (SUT)](#creating-the-system-under-test-sut)
+- [Fluent Assertions in Testing](#fluent-assertions-in-testing)
 
 ---
 
@@ -17,7 +17,11 @@ Terminal commands for using VSCode:
 - `dotnet add package Microsoft.EntityFrameworkCore --version 7.0.0`
 - `dotnet build`
 - `dotnet run` - it will tell you what port its on, can see it by visiting: `http://localhost:<port>/swagger/index.html`
-- 
+- for the test project: 
+  - Create a new project `dotnet new xunit -n YourTestProjectName`
+  - `dotnet add package FluentAssertions`
+  - if required, you can link this to an existing project: `cd YourTestProjectName dotnet add reference ../YourWebApiProjectName/YourWebApiProjectName.csproj`
+  - `dotnet test` to run it
 
 ---
 
@@ -126,4 +130,12 @@ Continous Inegration testing:
     - EnsureCreated() makes sure it exists. if it doesn't then it creates it.
   - update Program.cs
     - because we're using an in-memory db; we need to keep the connection open. usually entityFrameworkCore opens and closes the connection as needed
-    - 
+
+## Fluent Assertions in Testing
+- A .net library that provides a fluent interface for asserting the behaviour of code under test. Reads like natural language
+- `actualValue.Should().Be(expectedValue)`
+
+- Create a new project: `dotnet new xunit -n YourTestProjectName`
+  - if required, you can link this to an existing project: `cd YourTestProjectName dotnet add reference ../YourWebApiProjectName/YourWebApiProjectName.csproj`
+  - run `dotnet test` to run it
+- `dotnet add package FluentAssertions`
