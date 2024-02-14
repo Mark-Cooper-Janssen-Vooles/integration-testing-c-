@@ -15,9 +15,9 @@ namespace TodoApi.Models
       // seed db with test data
       var todos = new TodoItem[]
       {
-        new TodoItem { Name = "Learn C#"},
-        new TodoItem { Name = "Learn Integration testing"},
-        new TodoItem { Name = "Eat lunch"},
+        new TodoItem ("Learn C#"),
+        new TodoItem ("Learn Integration testing"),
+        new TodoItem ("Eat lunch"),
       };
 
       foreach (var todo in todos)

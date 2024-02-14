@@ -4,3 +4,5 @@ FluentAssertionsDemo/bin/
 FluentAssertionsDemo/obj/
 ../.idea/
 .idea/
+TodoApi.Tests/bin/
+TodoApi.Tests/obj
