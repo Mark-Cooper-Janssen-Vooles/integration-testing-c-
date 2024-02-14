@@ -139,3 +139,5 @@ Continous Inegration testing:
   - if required, you can link this to an existing project: `cd YourTestProjectName dotnet add reference ../YourWebApiProjectName/YourWebApiProjectName.csproj`
   - run `dotnet test` to run it
 - `dotnet add package FluentAssertions`
+
+- work in fluentAssertionsDemo/unittest1.cs
