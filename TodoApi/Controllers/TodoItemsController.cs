@@ -45,7 +45,7 @@ namespace TodoApi.Controllers
       _context.TodoItems.Add(item);
       await _context.SaveChangesAsync();
 
-      return CreatedAtAction(nameof(GetTodoItemAsync), new { id = 1 }); // hmm
+      return CreatedAtAction(nameof(GetTodoItemAsync), new { id = item.Id }, item);
     }
 
     [HttpPut("{id}")]
