@@ -150,3 +150,15 @@ Continous Inegration testing:
 
 ## Integration Testing of Database Layer (API Integration Testing)
 
+- tests the interaction between the app code and the database
+- helps prevent data corruption and security issues
+
+types of integration tests for the db layer:
+- E2E tests: tests whole system from UI to db and back
+- API tests: tests the api that the app uses to communicate with the database
+- Integration tests for data access code: testing how your repository methods interact with the db context 
+
+setting up the test environment:
+- create a test db that is separate from the production db
+- seed the test db with test data 
+- configure the app to use the test db for testing 
