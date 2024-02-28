@@ -2,5 +2,8 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=bbf8527a_002Deb8c_002D403d_002D9658_002D9c5b0a8976d8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetTodoITems_ReturnsListOfTodoItems" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::0CA97244-1841-444D-83C1-7FDF7A4B5EFF::net8.0::TodoApiDataLayerTesting.TodoItemsControllerIntegrationTests.GetTodoITems_ReturnsListOfTodoItems&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::0CA97244-1841-444D-83C1-7FDF7A4B5EFF::net8.0::TodoApiDataLayerTesting.TodoItemsControllerIntegrationTests.GetTodoItemWithId_ReturnsTodoItem&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::0CA97244-1841-444D-83C1-7FDF7A4B5EFF::net8.0::TodoApiDataLayerTesting.TodoItemsControllerIntegrationTests.GetTodoItemWithId_ReturnsNotFound&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::0CA97244-1841-444D-83C1-7FDF7A4B5EFF::net8.0::TodoApiDataLayerTesting.TodoItemsControllerIntegrationTests.PostTodoITemAsync_ShouldCreateNEwTodoItem&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
