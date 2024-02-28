@@ -6,3 +6,5 @@ FluentAssertionsDemo/obj/
 .idea/
 TodoApi.Tests/bin/
 TodoApi.Tests/obj
+TodoApiDataLayerTesting/bin/
+TodoApiDataLayerTesting/obj

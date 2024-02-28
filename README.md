@@ -162,3 +162,9 @@ setting up the test environment:
 - create a test db that is separate from the production db
 - seed the test db with test data 
 - configure the app to use the test db for testing 
+
+Steps:
+- create a new project, add the reference to TodoApi, add it to the solution 
+- In the TodoItemsControllerIntegrationTests.cs file, it inherits from `IClassFixture<WebApplicationFactory<Program>>` 
+  - need to add `dotnet add package Microsoft.AspNetCore.Mvc.Testing` 
+  - Its a class that implements IClassFixture 

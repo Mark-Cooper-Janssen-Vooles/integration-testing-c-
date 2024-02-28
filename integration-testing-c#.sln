@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApi", "TodoApi\TodoApi.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApi.Tests", "TodoApi.Tests\TodoApi.Tests.csproj", "{0CA97244-1841-444D-83C1-7FDF7A4B5EFD}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApiDataLayerTesting", "TodoApiDataLayerTesting\TodoApiDataLayerTesting.csproj", "{0CA97244-1841-444D-83C1-7FDF7A4B5EFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0CA97244-1841-444D-83C1-7FDF7A4B5EFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CA97244-1841-444D-83C1-7FDF7A4B5EFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CA97244-1841-444D-83C1-7FDF7A4B5EFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CA97244-1841-444D-83C1-7FDF7A4B5EFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA97244-1841-444D-83C1-7FDF7A4B5EFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA97244-1841-444D-83C1-7FDF7A4B5EFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA97244-1841-444D-83C1-7FDF7A4B5EFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

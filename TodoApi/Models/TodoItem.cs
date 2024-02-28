@@ -10,6 +10,7 @@ namespace TodoApi.Models
     {
       Id = GenerateUniqueId();
       Name = name;
+      IsComplete = false;
     }
 
     // Method to generate unique Id
