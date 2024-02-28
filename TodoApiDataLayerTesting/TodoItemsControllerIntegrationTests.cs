@@ -129,4 +129,24 @@ public class TodoItemsControllerIntegrationTests:IClassFixture<WebApplicationFac
         createdTodoItem.Name.Should().Be(todoItem.Name);
         createdTodoItem.IsComplete.Should().Be(false);
     }
+
+    // [Fact]
+    // public async Task DeleteTodoItemAsync_ShouldDeleteTodoItem()
+    // {
+    //     // arrange 
+    //     using var scope = _factory.Services.CreateScope();
+    //     var dbContext = scope.ServiceProvider.GetRequiredService<TodoContext>();
+    //     var client = _factory.CreateClient();
+    //
+    //     var todoItem = new TodoItem("Test Todo 1");
+    //     var jsonContent = new StringContent(System.Text.Json.JsonSerializer.Serialize(todoItem), Encoding.UTF8, "application/json");
+    //     var response = await client.PostAsync("/api/TodoItems", jsonContent);
+    //     // act 
+    //     //var getResponse = await client.GetAsync($"/api/TodoItems/{todoItem.Id}");
+    //     var delete = client.DeleteAsync($"/api/TodoItems/{todoItem.Id}");
+    //     // assert 
+    //     //getResponse.StatusCode.Should().Be(HttpStatusCode.OK);
+    //     var getResponseAfterDelete = await client.GetAsync($"/api/TodoItems/{todoItem.Id}");
+    //     getResponseAfterDelete.StatusCode.Should().Be(HttpStatusCode.NotFound);
+    // }
 }

@@ -6,5 +6,6 @@
     &lt;TestId&gt;xUnit::0CA97244-1841-444D-83C1-7FDF7A4B5EFF::net8.0::TodoApiDataLayerTesting.TodoItemsControllerIntegrationTests.GetTodoItemWithId_ReturnsNotFound&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::0CA97244-1841-444D-83C1-7FDF7A4B5EFF::net8.0::TodoApiDataLayerTesting.TodoItemsControllerIntegrationTests.PostTodoITemAsync_ShouldCreateNEwTodoItem&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::0CA97244-1841-444D-83C1-7FDF7A4B5EFF::net8.0::TodoApiDataLayerTesting.TodoItemsControllerIntegrationTests.PutTodoItemAsync_ShouldUpdateTodoItem&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::0CA97244-1841-444D-83C1-7FDF7A4B5EFF::net8.0::TodoApiDataLayerTesting.TodoItemsControllerIntegrationTests.DeleteTodoItemAsync_ShouldDeleteTodoItem&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
