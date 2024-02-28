@@ -99,7 +99,7 @@ Continous Inegration testing:
 - Steps of integration testing:
   - test project is included in the same solution as the SUT 
   - follows usual arrange, act and assert workflow 
-  - in the arrage step, requests are set up `var client = _factory.CreateClient()`
+  - in the arrange step, requests are set up `var client = _factory.CreateClient()`
     - _factory is an instance of `WebApplicationFactory<TEntry>` where generic TEntry is the entry point to the app which is the program class. the _factory object is injected 
   - in the act step, the client submits the request and receives a response, e.g. `var response = await client.getAsync(url);` 
   - the assert steps are used to validate the response received against the expected response as pass or fail test, e.g. `response.EnsureSuccessStatusCode();`, `Assert.Equal("text/html; charset=utf-8", response.Content.Headers.ContentType.ToString());`
