@@ -9,6 +9,7 @@
 - [Creating the System under test (SUT)](#creating-the-system-under-test-sut)
 - [Fluent Assertions in Testing](#fluent-assertions-in-testing)
 - [Integration testing of DB layer - API Integration testing](#integration-testing-of-database-layer-api-integration-testing)
+- [Integration Tests for Data Access Code](#integration-tests-for-data-access-code)
 
 ---
 
@@ -164,7 +165,14 @@ setting up the test environment:
 - configure the app to use the test db for testing 
 
 Steps:
-- create a new project, add the reference to TodoApi, add it to the solution 
+- create a new project 'TodoApiDataLayerTesting', add the reference to TodoApi, add it to the solution 
 - In the TodoItemsControllerIntegrationTests.cs file, it inherits from `IClassFixture<WebApplicationFactory<Program>>` 
   - need to add `dotnet add package Microsoft.AspNetCore.Mvc.Testing` 
   - Its a class that implements IClassFixture 
+- tests found here: TodoApiDataLayerTesting\TodoItemsControllerIntegrationTests.cs
+
+## Integration Tests for Data Access Code 
+
+- Creates ITodoItemRepository.cs class
+- Creates MockTodoItemRepository.cs class - essentially mocks the TodoItemRepository (we don't have a repository in our controller, we're just directly calling the in memory db. but if we did it would be like this)
+- 
