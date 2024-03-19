@@ -10,6 +10,8 @@
 - [Fluent Assertions in Testing](#fluent-assertions-in-testing)
 - [Integration testing of DB layer - API Integration testing](#integration-testing-of-database-layer-api-integration-testing)
 - [Integration Tests for Data Access Code](#integration-tests-for-data-access-code)
+- [Load Testing / Concurrency Testing](#concurrency-testing)
+
 
 ---
 
@@ -151,7 +153,7 @@ Continous Inegration testing:
 
 ## Integration Testing of Database Layer (API Integration Testing)
 
-- tests the interaction between the app code and the database
+- tests the interaction between the app code and the database - all the way from the API, repositories, and DB.
 - helps prevent data corruption and security issues
 
 types of integration tests for the db layer:
@@ -173,6 +175,44 @@ Steps:
 
 ## Integration Tests for Data Access Code 
 
+- This section is about ensuring the correct interaction between database and code. Just from the repositories to the DB.
+
 - Creates ITodoItemRepository.cs class
 - Creates MockTodoItemRepository.cs class - essentially mocks the TodoItemRepository (we don't have a repository in our controller, we're just directly calling the in memory db. but if we did it would be like this)
-- 
+
+## Concurrency Testing 
+
+- Load testing is a type of performance testing that assesses how a system behaves under a specific load or concurrency. The goal of load testing is to evaluate the system's ability to handle a certain amount of load without degrading performance or causing failures.
+- Load refers to the number of concurrent users or transactions that a system is subjected to. It helps identify bottlenecks, uncover issues related to system capacity, and determine the systems behavior under different levels of stress 
+- He uses JMeter (binaries download the .zip): https://jmeter.apache.org/download_jmeter.cgi
+- Also need java sdk installed, `java --version`
+
+*Example for Edge case GET Request performance with JMeter*
+- open JMeter (wherever you extracted it, click into bin file, onto ApacheJmeter.Jar)
+- Number of threads is e.g. how many users using it at once 
+- Ramp-up period is how long it takes for all of these users to use it at once
+- Run the application, `cd TodoApi && dotnet run`, check it at http://localhost:5258/swagger/index.html
+- Right click the thread group, add Sampler > Http Request
+- add `localhost` to the server name, add whatever port (in my case 5258), set it to GET and put the path in 
+- Right click the Http Request, add Listeners > Results Tree
+- Click the green arrow button to start running it, it will ask you to save it somewhere
+
+*Add an assertion* 
+- right click the thread group, add Assertion > Response Assertion
+- name it. for field to test, select 'response only'
+- in the 'patterns to test' put '200' (i.e. the response code)
+  - if it fails, it will say why only when it fails
+
+
+- to add an assertion with data, i.e. a POST request, you need to right-click and add > Config Element > Http Header Manager. And then click the plus icon and put name: `content-type` and value: `application/json`
+
+
+*to simulate high server load*
+- Set the thread group to use 100 threads, ramp up time 1 second, and loop count 10
+- This causes 500 failures - they seem to increase as it goes on as well. If we look into the dotnet terminal thats running it, we can see:
+````
+An unhandled exception has occurred while executing the request.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 5: 'database is locked For more information on this error code see https://www.sqlite.org/rescode.html'.
+at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+````
+- the above was using the sqlite localhost db, whereas the instructor shows this vs mysql local db which doesn't have these errors - database selection will affect the performance here. 
