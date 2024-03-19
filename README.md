@@ -11,7 +11,8 @@
 - [Integration testing of DB layer - API Integration testing](#integration-testing-of-database-layer-api-integration-testing)
 - [Integration Tests for Data Access Code](#integration-tests-for-data-access-code)
 - [Load Testing / Concurrency Testing](#concurrency-testing)
-
+- [CICD using github actions](#github-actions)
+- [Containerization with Docker](#containerization-with-docker)
 
 ---
 
@@ -216,3 +217,30 @@ Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 5: 'database is
 at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
 ````
 - the above was using the sqlite localhost db, whereas the instructor shows this vs mysql local db which doesn't have these errors - database selection will affect the performance here. 
+
+---
+
+## CICD using Github Actions and Docker and Azure 
+
+### Github Actions
+- go to the actions tab of your repo: https://github.com/Mark-Cooper-Janssen-Vooles/integration-testing-c-/actions/new
+- you define your worjflows in YAML files stored in the .github/workflows directory
+  - these YAML files follow a structured syntax that specifies the events, jobs, and steps that Github should execute 
+- Github's primary usecase is CI.
+- Github actions can handle CD as well. We can set up our actions to deploy our application to platforms like Azure Web Apps as well.
+- When you go to the 'actions' tab in the github repo, you can search for a .net app and github will commmit that to master
+  - just search .net and click 'configure' and it makes a PR with the dotnet.yml 
+
+- understanding the .yml step-by-step: https://github.com/Mark-Cooper-Janssen-Vooles/integration-testing-c-/blob/master/.github/workflows/dotnet.yml
+  - Workflow Name is named .NET - the identifier for the workflow displayed in the Actions tab of your Github repository 
+  - Trigger Events: workflow configured to trigger on two types of events: push events to the master branch and when pull requests are done to the master branch
+  - Execution environment: that it runs on the ubuntu-latest image 
+  - Job Definition: within the workflow there is a single job named 'build' - the job is responsible for building and testing the .NET project 
+  - Job Steps: each step has a specific purpose 
+    - `actions/checkout@v4` uses the github action to clone your repository into the runner's workspace - providing access to your projects source code
+    - `actions/setup-dotnet@v4` sets up the .NET runtime environment - it specifies it should use the .net version 8.0.x
+    - `restore dependencies` runs `dotnet restore` restoring the projects dependencies based in the .csproj and nuget.config 
+    - `Build` runs `dotnet build`, the --no-restore flag indicates that dependency restoration should not be performed again because it was done in the previous step
+    - `Test` runs `dotnet test` runs the unit tests using the dotnet test command using the --no-build flag which skips the build step. the --verbosity normal flag sets the verbosity level of the test runner. 
+
+### Containerization with Docker
