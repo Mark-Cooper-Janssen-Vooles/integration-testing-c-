@@ -36,9 +36,9 @@ jobs:
       run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
     - name: Build docker image 
       run: docker build -t mytodo-api:latest .
-    # - name: Tag docker image
-    #   uses: docker tag mytodo-api:latest ${{ secrets.DOCKER_USERNAME }}/mytodo-api-dockerhub:latest
-    # - name: Push docker image 
-    #   uses: docker push ${{ secrets.DOCKER_USERNAME }}/mytodo-api-dockerhub
+    - name: Tag docker image
+      run: docker tag mytodo-api:latest ${{ secrets.DOCKER_USERNAME }}/mytodo-api-dockerhub:latest
+    - name: Push docker image 
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/mytodo-api-dockerhub
     - name: Clean up Docker login credentials
       run: docker logout
