@@ -292,4 +292,12 @@ at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 d
 - One customisation will involve storing and accessing secrets to/from the github repo settings 
 - in github ui: setting tab => under security "secrets and variables" => actions => new repository secret 
   - make DOCKER_PASSWORD and DOCKER_USERNAME to what was used before when you logged in in `docker login`.
-- 
+- in the dotnet.yml, add this to the jobs:
+````yml
+    services:
+      api:
+        image: march4/mytodo-api-dockerhub
+        ports:
+          - 5258/tcp
+````
+- go to github UI => actions => click on the latest one => go into the build => you can see all the jobs here 
