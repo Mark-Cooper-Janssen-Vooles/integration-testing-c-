@@ -244,3 +244,31 @@ at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 d
     - `Test` runs `dotnet test` runs the unit tests using the dotnet test command using the --no-build flag which skips the build step. the --verbosity normal flag sets the verbosity level of the test runner. 
 
 ### Containerization with Docker
+- benefits of containerization
+  - portability: containers run consistently across different environments
+  - isolation: applications and dependencies are isolated, reducing conflicts
+  - scalability: easy scaling up or down as needed
+  - version control: containers can be versioned and tracked
+- docker architecture
+  - consists of docker engine, which includes the docker daemon and docker client 
+  - images areu sed to create containers
+  - docker hub is a registry for storing and sharing container images, similar to github for code repositories 
+- Visual Studio docker support
+  - visual studio makes it very easy to add docker support
+  - open the solution in visual studio => right-click 'todoAPI' => new => add docker support => make the docker file Linux
+  - it then generates a dockerfile 
+- the dockerfile contains instructions on how to build a Docker image for our application. it lives at the root of our project directory. 
+
+- Docker commands:
+  - Step 1: building a docker image: `docker build -t mytodo-api:latest .`
+    - `docker build` builds an image
+    - `-t` specifies the image tag, which is like a version
+    - `mytodo-api:latest` is the image name with a tag
+    - `.` indicates the current directory where the project is located
+  - Step 2: running a docker image: `docker run -d -p 5017:80 --name mytodo-api-container mytodo-api:latest`
+    - `docker run` starts a container
+    - `-d` runs the container in the background 
+    - `-p 5017:80` maps port 5017 on your host to port 80 in the container
+    - `--name mytodo-api-container` gives the container a name 
+    - `mytodo-api:latest` is the image to use 
+  
