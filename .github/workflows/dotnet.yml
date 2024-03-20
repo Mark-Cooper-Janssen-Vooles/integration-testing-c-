@@ -14,6 +14,12 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    services:
+      api:
+        image: march4/mytodo-api-dockerhub
+        ports:
+          - 5258/tcp
+
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET

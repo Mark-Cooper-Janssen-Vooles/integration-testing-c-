@@ -288,3 +288,8 @@ at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 d
   - can see it here: https://hub.docker.com/repository/docker/march4/mytodo-api-dockerhub/general 
 
 ### Creating the CI Pipeline for the Todo API Application
+- We need to customise the dotnet.yml file that was generated from the github actions UI
+- One customisation will involve storing and accessing secrets to/from the github repo settings 
+- in github ui: setting tab => under security "secrets and variables" => actions => new repository secret 
+  - make DOCKER_PASSWORD and DOCKER_USERNAME to what was used before when you logged in in `docker login`.
+- 
