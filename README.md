@@ -13,6 +13,8 @@
 - [Load Testing / Concurrency Testing](#concurrency-testing)
 - [CICD using github actions](#github-actions)
 - [Containerization with Docker](#containerization-with-docker)
+- [Container Integration in Docker Hub](#container-integration-in-docker-hub)
+- [Creating the CI Pipeline for the Todo API Application](#creating-the-ci-pipeline-for-the-todo-api-application)
 
 ---
 
@@ -272,3 +274,17 @@ at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 d
     - `--name mytodo-api-container` gives the container a name 
     - `mytodo-api:latest` is the image to use 
   
+### Container Integration in Docker Hub
+- Step 1: log in to docker hub, `docker login`
+- Step 2: tag our local image
+  - i.e. `docker tag local-image your-username/repository-name:tag`
+  - local-image: name of your locak docker image 
+  - your-username: your docker hub username 
+  - repository-name: name of repository on docker hub 
+  - in my case: `docker tag mytodo-api:latest march4/mytodo-api-dockerhub:latest`
+- Step 3: Push the image to docker hub
+  - i.e. `docker push your-username/repository-name:tag`
+  - in my case: `docker push march4/mytodo-api-dockerhub`
+  - can see it here: https://hub.docker.com/repository/docker/march4/mytodo-api-dockerhub/general 
+
+### Creating the CI Pipeline for the Todo API Application
